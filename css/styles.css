@@ -1,0 +1,166 @@
+/* Taylor Eisman */
+/* MIU 06/12 */
+/* Project 3 */
+/* Gold App */
+
+label.error{display:block; margin:10px 0; color:#cc0000;}
+
+#requiredHint{color:maroon; font-size: small;}
+
+#cta{padding: 0px 20px;}
+
+#cancelLink{padding: 0px 40px;}
+
+.ui-body-f {background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #2BBBEF));}
+
+
+/*header {
+	background-color: navy;
+	margin: 0px;
+	border: 1px dashed black;
+}
+
+body {
+	background-color: gray;
+	font-family: "Arial Black", Times, serif;
+}
+
+h1 {
+	color: silver;
+	font-weight: bold;
+	padding-left: 75px;
+	margin: 0px;
+}
+
+h2 {
+	color: silver;
+	font-size: medium;
+	font-weight: bold;
+	margin: 0px;
+}
+
+#cta {
+	background-repeat: no-repeat;
+	width: 304px;
+	height: 200px;
+}
+
+a.ctaLink {
+	position: fixed;
+	top: 175px;
+	right: 20px;
+	background-color: #6e0202;
+	color: white;
+	font-size: xx-large;
+}
+
+a.browseLink {
+	color: silver;
+	font-size: x-large;
+	padding-left: 20px;
+	text-decoration: none;
+	border: black;
+}
+
+#errors {
+	color: red;
+	font-size: smaller;
+	font-style: italic;
+	padding-top: 0px;
+}
+
+#search {
+	padding-left: 105px;
+}
+
+p {
+	color: silver;
+	font-size: small;
+	background-color: navy;
+}
+
+div #items {
+	background: blue;
+	border: black;
+}
+
+body > p {
+	color: black;
+	font-size: xx-small;
+	font-style: italic;
+}
+
+[type]. textarea {border: 1px solid navy;}
+[type="radios"] {border: none; width: inherit;}
+
+form {
+	color: silver;
+	font-size: medium;
+	font-weight: bold;
+	text-align: left;
+	padding: 5px;
+	background-color: navy;
+	border: 1px dashed black;
+	margin: 0px;
+}
+
+legend {
+	color: silver;
+	font-size: larger;
+}
+*/
+/*
+a.link{color: blue;}
+a.visited{color: red;}
+a.hover{color: gray;}
+a.active{color: black;}
+*/
+/*
+span {
+	color: red;
+	font-size: smaller;
+	font-style: italic;
+	padding-bottom: 0px;
+}
+
+div.linkTitle {
+	color: silver;
+	font-size: x-large;
+	background-color: navy;
+}
+
+div.displayLink {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	width: 304px;
+	height: 50px;
+}
+
+div.displayCellLink {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	width: 304px;
+	height: 50px;
+}
+
+div.displayCarLink {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	width: 304px;
+	height: 50px;
+}
+
+div.displayRentLink {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	width: 304px;
+	height: 50px;
+}
+
+div.displayCableLink {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	width: 304px;
+	height: 50px;
+}
+*/
