@@ -175,6 +175,50 @@ var billForm = $('#AddBillForm');
 		linksLi.append(deleteLink);
 	}
 
+
+function editItem(){
+		var thisKey = $(this).attr("key");
+		var value = localStorage.getItem($(this).attr("key"));
+		var item = JSON.parse(value);
+		
+		toggleControls("off");
+		
+		$('#categories').val(item.category[1]);
+		$('#compName').val(item.compName[1]);
+		$('compEmail').val(item.compEmail[1]);
+		$('#compWeb').val(item.compWeb[1]);
+		var radios = $('input:radio[name="pastDue"]:checked').val();
+
+		/* var radios = document.forms[0].payBy;
+		for(var i=0; i<radios.length; i++){
+			if(radios[i].value == "Internet" && item.payBy[1] == "Internet"){
+				radios[i].setAttribute("checked", "checked");
+			}else if(radios[i].value == "Mail" && item.payBy[1] == "Mail"){
+				radios[i].setAttribute("checked", "checked");
+			}
+		}
+		if(item.pastDue[1] == "Yes"){
+			ge('pastDue').setAttribute("checked", "checked");
+		}
+		*/
+		$('budgetPercent').val(item.budgetPercent[1]);
+		$('date').val(item.date[1]);
+		$('notes').val(item.notes[1]);
+		
+		save.off("click", storeData);
+		$('#submit').attr("value", "Edit Bill");
+		var editSubmit = $('#submit');
+		
+		save.on("click", function(){
+			storeData(thisKey);
+		});
+		editSubmit.attr("click", this.key);	
+	}
+
+
+
+
+
 /*
 window.addEventListener("DOMContentLoaded", function(){
 
@@ -208,39 +252,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 
 
-	function editItem(){
-		var value = localStorage.getItem(this.key);
-		var item = JSON.parse(value);
-		
-		toggleControls("off");
-		
-		ge('categories').value = item.category[1];
-		ge('compName').value = item.compName[1];
-		ge('compEmail').value = item.compEmail[1];
-		ge('compWeb').value = item.compWeb[1];
-		var radios = document.forms[0].payBy;
-		for(var i=0; i<radios.length; i++){
-			if(radios[i].value == "Internet" && item.payBy[1] == "Internet"){
-				radios[i].setAttribute("checked", "checked");
-			}else if(radios[i].value == "Mail" && item.payBy[1] == "Mail"){
-				radios[i].setAttribute("checked", "checked");
-			}
-		}
-		if(item.pastDue[1] == "Yes"){
-			ge('pastDue').setAttribute("checked", "checked");
-		}
-		ge('budgetPercent').value = item.budgetPercent[1];
-		ge('date').value = item.date[1];
-		ge('notes').value = item.notes[1];
-		
-		save.removeEventListener("click", storeData);
-		ge('submit').value = "Edit Bill";
-		var editSubmit = ge('submit');
-		editSubmit.addEventListener("click", validate);
-		editSubmit.key = this.key;
-		
-	}
-
+	
 	function deleteItem(){
 		var ask = confirm("Are you sure you want to delete this bill?");
 		if(ask){
