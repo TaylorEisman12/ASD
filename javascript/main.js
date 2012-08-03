@@ -1,20 +1,44 @@
 // Taylor Eisman
-// MIU 06/12
-// Project 3
-// Gold App
+// ASD 07/12
+// Project 1
 
-window.addEventListener("DOMContentLoaded", function(){
-
-var parseBillForm = function(data){
-	function BPupdate(e){
-	document.getElementById('BPValue').innerHTML = e;	
-}
-
-	function ge(x){
-		var theElement = document.getElementById(x);
-		return theElement;
-	}
+// $(function(){  <-- Shortcut
+//};)
+// $(document).ready(function(){
 	
+//	$('#') // find element in page  *called factory*
+
+// };)
+
+var parseBillForm = function(data) {
+//uses form data here;
+
+//console.log(data);
+};
+
+$(document).bind('pageinit', function(){
+
+var billForm = $('#AddBillForm');
+
+	billForm.validate({
+		invalidHandler: function(form, validator){
+		billFormErrors.click();
+		var html = '';
+		for(var key in validator.submitted){
+			var label = $('label[for^="'+ key +'"]').not('[generated]');
+			var legend = label.closest('fieldset').find('.ui-controlgroup-label');
+			var fieldName = legend.length ? legend.text() : label.text();
+			html += '<li>'+ fieldName +'</li>';
+		};
+		$("recordBillErrors ul").html(html);
+		},
+		submitHandler: function(){
+			var data = billForm.serializeArray();
+			parseBillForm(data);
+		}
+	});
+});
+
 	function makeCats(){
 		var formTag = document.getElementsByTagName("form"),
 			selectLi = ge('select'),
@@ -31,44 +55,7 @@ var parseBillForm = function(data){
 		selectLi.appendChild(makeSelect);
 	}
 	
-	function getSelectedRadio(){
-		var radios = document.forms[0].payBy;
-		for(var i=0; i<radios.length; i++){
-			if(radios[i].checked){
-			payByValue = radios[i].value;
-			}
-		}
-	}
-	
-	function getCheckboxValue(){
-		if(ge('pastDue').checked){
-			pastDueValue = ge('pastDue').value;
-		}else{
-			pastDueValue = "No"
-		}
-	}
-	
-	function toggleControls(n){
-		switch(n){
-			case "on":
-				ge('billDetails').style.display = "none";
-				ge('clear').style.display = "inline";
-				ge('displayLink').style.display = "none";
-				ge('addNew').style.display = "inline";
-				break;
-			case "off":
-				ge('billDetails').style.display = "block";
-				ge('clear').style.display = "inline";
-				ge('displayLink').style.display = "inline";
-				ge('addNew').style.display = "none";
-				ge('items').style.display = "none";
-				break;
-			default:
-				return false;
-		}
-	}
-
-	function storeData(key){
+		function storeData(key){
 		if(!key){
 			var id			= Math.floor(Math.random()*100000001);
 		}else{
@@ -78,22 +65,35 @@ var parseBillForm = function(data){
 		getCheckboxValue();
 		
 		var item					= {};
-			item.category			= ["Category: ", ge('categories').value];
-			item.compName			= ["Company Name: ", ge('compName').value];
-			item.compEmail			= ["Company Email: ", ge('compEmail').value];
-			item.compWeb			= ["Company Website: ", ge('compWeb').value];
+			item.category			= ["Category: ", $('#categories').val()];
+			item.compName			= ["Company Name: ", $('#compName').val()];
+			item.compEmail			= ["Company Email: ", $('#compEmail').val()];
+			item.compWeb			= ["Company Website: ", $('#compWeb').val()];
 			item.payBy				= ["Pay By: ", payByValue];
 			item.pastDue			= ["Past Due: ", pastDueValue];
-			item.budgetPercent		= ["Percent of Budget: ", ge('budgetPercent').value];
-			item.date				= ["Date Added: ", ge('date').value];
-			item.notes				= ["Notes: ", ge('notes').value];
+			item.budgetPercent		= ["Percent of Budget: ", $('#budgetPercent').value];
+			item.date				= ["Date Added: ", $('#date').value];
+			item.notes				= ["Notes: ", $('#notes').val()];
 		
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("Bill Saved!");
+		save.off("click");
+		save.on("click", storeData);
+		window.location.reload();
 	
-	}
+	};
+	
+	var getSelectedRadio = function(){
+	var radios = function (){
+		$('input:radio[name="pastDue"]:checked').val();
+		return($('input:radio[name="pastDue"]:checked').val());
+
+};
+};
+
 
 	function getData(){
+		$("#addBill").empty();
 		toggleControls("on");
 		if(localStorage.length === 0){
 			alert("There is no Local Storage so default data was added.");
@@ -125,6 +125,55 @@ var parseBillForm = function(data){
 			makeItemLinks(localStorage.key(i), linksLi);
 		}
 	}
+
+	function autoFillData(){
+		for(var n in json){
+			var id = Math.floor(Math.random()*100000001);
+			localStorage.setItem(id, JSON.stringify(json[n]));
+		}
+	}
+
+	function toggleControls(n){
+			switch(n){
+				case "on":
+					$('#billDetails').hide();
+					$('#clear').show();
+					$('$displayLink').hide();
+					$('#addNew').show();
+					break;
+				case "off":
+					$('#billDetails').hide();
+					$('#clear').style.display = "inline";
+					$('#displayLink').style.display = "inline";
+					$('#addNew').style.display = "none";
+					$('#items').style.display = "none";
+					break;
+				default:
+					return false;
+		}
+	}
+
+
+/*
+window.addEventListener("DOMContentLoaded", function(){
+
+
+	function ge(x){
+		var theElement = document.getElementById(x);
+		return theElement;
+	}
+	
+
+
+	function getCheckboxValue(){
+		if(ge('pastDue').checked){
+			pastDueValue = ge('pastDue').value;
+		}else{
+			pastDueValue = "No"
+		}
+	}
+	
+	
 	
 	/*function getImage(catName, makeSubList){
 		var imageLi = document.createElement('li');
@@ -133,13 +182,8 @@ var parseBillForm = function(data){
 		var setSrc = newImage.setAttribute("src", "images/"+ catName + ".png");
 		imageLi.appendChild(newImage);
 	}
-	*/
-	function autoFillData(){
-		for(var n in json){
-			var id = Math.floor(Math.random()*100000001);
-			localStorage.setItem(id, JSON.stringify(json[n]));
-		}
-	}
+	
+
 	
 	function makeItemLinks(key, linksLi){
 		var editLink = document.createElement('a');
@@ -283,24 +327,7 @@ $(document).bind('pageinit', function(){
 	var billForm = $('#addBillForm'),
 	billFormErrors = $('billFormErrors')
 	;
-	billForm.validate({
-		invalidHandler: function(form, validator){
-		billFormErrors.click();
-		var html = '';
-		for(var key in validator.submitted){
-			var label = $('label[for^="'+ key +'"]').not('[generated]');
-			var legend = label.closest('fieldset').find('.ui-controlgroup-label');
-			var fieldName = legend.length ? legend.text() : label.text();
-			html += '<li>'+ fieldName +'</li>';
-		};
-		$("recordBillErrors ul").html(html);
-		},
-		submitHandler: function(){
-			var data = billForm.serializeArray();
-			parseBillForm(data);
-		}
-	});
-});
+
 
 /*function BPupdate(e){
 	document.getElementById('BPValue').innerHTML = e;	
