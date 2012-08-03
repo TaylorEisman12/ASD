@@ -99,15 +99,16 @@ var billForm = $('#AddBillForm');
 			alert("There is no Local Storage so default data was added.");
 			autoFillData();
 		}
-		var makeDiv = document.createElement('div');
-		makeDiv.setAttribute("id", "items");
-		var makeList = document.createElement('ul');
-		makeDiv.appendChild(makeList);
+		var makeDiv = $('<div>');
+		makeDiv.attr("id", "items");
+		var makeList = $('<ul>');
+		makeDiv.append(makeList);
 		document.body.appendChild(makeDiv);
-		ge('items').style.display = "display";
+		$('#bills').append(makeDiv);
+		$('#items').show();
 		for(var i=0, len=localStorage.length; i<len;i++){
-			var makeli = document.createElement('li');
-			var linksLi = document.createElement('li');
+			var makeli = $('<li>');
+			var linksLi = $('<li>');
 			makeList.appendChild(makeli);
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
@@ -142,11 +143,11 @@ var billForm = $('#AddBillForm');
 					$('#addNew').show();
 					break;
 				case "off":
-					$('#billDetails').hide();
-					$('#clear').style.display = "inline";
-					$('#displayLink').style.display = "inline";
-					$('#addNew').style.display = "none";
-					$('#items').style.display = "none";
+					$('#billDetails').show();
+					$('#clear').show();
+					$('#displayLink').show();
+					$('#addNew').hide();
+					$('#items').hide();
 					break;
 				default:
 					return false;
