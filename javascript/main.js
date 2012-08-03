@@ -109,19 +109,19 @@ var billForm = $('#AddBillForm');
 		for(var i=0, len=localStorage.length; i<len;i++){
 			var makeli = $('<li>');
 			var linksLi = $('<li>');
-			makeList.appendChild(makeli);
+			makeList.append(makeli);
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
 			var obj = JSON.parse(value);
-			var makeSubList = document.createElement('ul');
-			makeli.appendChild(makeSubList);
+			var makeSubList = $('<ul>');
+			makeli.append(makeSubList);
 			getImage(obj.category[1], makeSubList);
 			for(var n in obj){
-				var makeSubli = document.createElement('li');
-				makeSubList.appendChild(makeSubli);
+				var makeSubli = $('<li>');
+				makeSubList.append(makeSubli);
 				var optSubText = obj[n][0]+" "+obj[n][1];
-				makeSubli.innerHTML = optSubText;
-				makeSubList.appendChild(linksLi);
+				makeSubli.text(optSubText);
+				makeSubList.append(linksLi);
 			}
 			makeItemLinks(localStorage.key(i), linksLi);
 		}
