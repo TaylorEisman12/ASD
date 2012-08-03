@@ -6,7 +6,7 @@
 //};)
 // $(document).ready(function(){
 	
-//	$('#') // find element in page  *called factory*
+//	$('#') // find element in page  *called factory* 
 
 // };)
 
