@@ -1,6 +1,6 @@
 // Taylor Eisman
-// MIU 06/12
-// Project 2
+// ASD 07/12
+// Project 1
 
 var json = {
 	"bill1": {
