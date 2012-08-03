@@ -154,6 +154,26 @@ var billForm = $('#AddBillForm');
 		}
 	}
 
+	function makeItemLinks(key, linksLi){
+		var editLink = $('<a>');
+		editLink.attr("href", "#");
+		editLink.attr("key", key);
+		var editText = "Edit Bill";
+		editLink.on("click", editItem);
+		editLink.text(editText);
+		linksLi.append(editLink);
+		
+		var breakTag = $('<br>');
+		linksLi.append(breakTag);
+		
+		var deleteLink = $('<a>');
+		deleteLink.attr("href", "#");
+		deleteLink.attr("key", key);
+		var deleteText = "Delete Bill";
+		deleteLink.on("click", deleteItem);
+		deleteLink.text(deleteText);
+		linksLi.append(deleteLink);
+	}
 
 /*
 window.addEventListener("DOMContentLoaded", function(){
@@ -186,26 +206,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 
 	
-	function makeItemLinks(key, linksLi){
-		var editLink = document.createElement('a');
-		editLink.href = "#";
-		editLink.key = key;
-		var editText = "Edit Bill";
-		editLink.addEventListener("click", editItem);
-		editLink.innerHTML = editText;
-		linksLi.appendChild(editLink);
-		
-		var breakTag = document.createElement('br');
-		linksLi.appendChild(breakTag);
-		
-		var deleteLink = document.createElement('a');
-		deleteLink.href = "#";
-		deleteLink.key = key;
-		var deleteText = "Delete Bill";
-		deleteLink.addEventListener("click", deleteItem);
-		deleteLink.innerHTML = deleteText;
-		linksLi.appendChild(deleteLink);
-	}
+
 
 	function editItem(){
 		var value = localStorage.getItem(this.key);
