@@ -19,7 +19,7 @@ var parseBillForm = function(data) {
 $(document).bind('pageinit', function(){
 
 var billForm = $('#AddBillForm');
-
+//$
 	billForm.validate({
 		invalidHandler: function(form, validator){
 		billFormErrors.click();
@@ -63,7 +63,7 @@ var billForm = $('#AddBillForm');
 		}
 		getSelectedRadio();
 		getCheckboxValue();
-		
+		// $w
 		var item					= {};
 			item.category			= ["Category: ", $('#categories').val()];
 			item.compName			= ["Company Name: ", $('#compName').val()];
@@ -90,7 +90,7 @@ var billForm = $('#AddBillForm');
 
 };
 };
-
+//$
 
 	function getData(){
 		$("#addBill").empty();
@@ -133,7 +133,7 @@ var billForm = $('#AddBillForm');
 			localStorage.setItem(id, JSON.stringify(json[n]));
 		}
 	}
-
+// $
 	function toggleControls(n){
 			switch(n){
 				case "on":
@@ -153,7 +153,7 @@ var billForm = $('#AddBillForm');
 					return false;
 		}
 	}
-
+// $
 	function makeItemLinks(key, linksLi){
 		var editLink = $('<a>');
 		editLink.attr("href", "#");
@@ -182,7 +182,7 @@ function editItem(){
 		var item = JSON.parse(value);
 		
 		toggleControls("off");
-		
+//$		
 		$('#categories').val(item.category[1]);
 		$('#compName').val(item.compName[1]);
 		$('compEmail').val(item.compEmail[1]);
@@ -204,7 +204,7 @@ function editItem(){
 		$('budgetPercent').val(item.budgetPercent[1]);
 		$('date').val(item.date[1]);
 		$('notes').val(item.notes[1]);
-		
+//$		
 		save.off("click", storeData);
 		$('#submit').attr("value", "Edit Bill");
 		var editSubmit = $('#submit');
