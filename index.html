@@ -50,6 +50,92 @@
 		</div><!-- Home Page -->
 		
 		
+		<div data-role="page" id="addBill" data-theme="f" data-add-back-btn="true">
+			<div data-role="header" data-theme="b" data-position="fixed">
+				<h1>Add A Bill</h1>
+			</div><!-- header -->
+			<span id="requiredHint">*fields are required.</span>
+			<div data-role="content">
+				<form action="" method="post" id="addBillForm">
+					<div data-role="fieldcontain">
+						<label for="category">*Category</label>
+						<select name="category" id="category" data-native-menu="false" class="required">
+							<option data-placeholder="true">Select a Category</option>
+							<option value="cell">Cell</option>
+							<option value="car">Car</option>
+							<option value="rent">Rent</option>
+							<option value="cable">Cable</option>
+						</select>
+					</div><!-- Category dropdown fieldcontain -->
+					<div data-role="fieldcontain">
+						<label for="compName">*Company Name</label>
+						<input type="text" name="compName" id="compName" placeholder="Please enter Company Name." class="required" />
+					</div><!-- Company Name text fieldcontain -->
+					<div data-role="fieldcontain">
+						<label for="compEmail">*Company Email</label>
+						<input type="text" name="compEmail" id="compEmail" placeholder="Please enter a valid Email." class="required email" />
+						<span id="requiredHint">Example: abc@abc.com</span>
+					</div><!-- Company Email text fieldcontain-->
+					<div data-role="fieldcontain">
+						<label for="compWebsite">Company Website</label>
+						<input type="text" name="compWebsite" id="compWebsite" placeholder="Enter company website."  />
+					</div> <!-- Company website text fieldcontain -->
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+							<legend>Pay By</legend>
+							<input type="radio" value="internet" name="internet" data-theme="b" id="internet" class="required" />
+							<label for="internet">Internet</label>
+							<input type="radio" value="mail" name="mail" data-theme="b" id="mail" />
+							<label for="mail">Mail</label>
+						</fieldset>	
+					</div><!-- Payby Radio fieldcontain -->
+					<div data-role="fieldcontain">
+						<label for="pastDue">Past Due?</label><br />
+						<select data-role="slider" data-theme="b">
+							<option value="off">No</option>
+							<option value="yes">Yes</option>
+						</select>
+					</div><!-- Past due slider fieldcontain -->
+					<!-- <div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+							<input type="checkbox" value="yes" name="pastDue" id="pastDue" />
+							<label for="pastDue">Past Due?</label>
+						</fieldset>
+					</div> --><!-- PastDue checkbox fieldcontain -->
+					<div data-role="fieldcontain">
+						<label for="budgetPercent">Budget Percent</label>
+						<input type="range" name="budgetPercent" id="budgetPercent" data-theme="b" value="50" min="0" max="100" />
+					</div><!-- budget percent slider fieldcontain -->
+					<div data-role="fieldcontain">
+						<label for="mydate">Date Added</label>
+						<input name="dateAdded" id="dateAdded" type="date" data-role="date" data-options='{"mode": "calbox"}'>
+					</div><!-- Date added fieldcontain -->
+					<div data-role="fieldcontain">
+						<label for="notes">Notes</label>
+						<textarea></textarea>
+					</div><!-- Notes textarea fieldcontain -->
+					<div data-role="fieldcontain">
+						<input type="submit" value="Submit" data-inline="true" data-theme="b"  />
+						<a href="index.html" id="cancelLink">Cancel</a>
+					</div><!-- submit/clear buttons fieldcontain -->
+					<a href="#recordBillErrors" id="billFormErrors" data-rel="dialog"></a>
+				</form>
+			</div> <!-- Content -->
+		</div> <!-- Page -->
+		<div id="bills">
+		</div>
+		<div data-role="dialog" id="recordBillErrors">
+			<div data-role="header" data-position="fixed">
+				<h1>Missing Fields</h1>
+			</div>
+			<div data-role="content">
+				<ul>
+					
+				</ul>
+			</div>
+		</div>
+		
+		
 		
 		<div data-role="page" id="info" data-theme="f">
 			<div data-role="header" data-theme="b" data-position="fixed">
