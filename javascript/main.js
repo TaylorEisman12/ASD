@@ -17,7 +17,7 @@ var parseBillForm = function(data) {
 };
 // used $ factory and changed .bind to .on
 $(document).on('pageinit', function(){
-
+// used factory
 var billForm = $('#AddBillForm');
 
 	billForm.validate({
@@ -25,11 +25,13 @@ var billForm = $('#AddBillForm');
 		billFormErrors.click();
 		var html = '';
 		for(var key in validator.submitted){
+			// used factory
 			var label = $('label[for^="'+ key +'"]').not('[generated]');
 			var legend = label.closest('fieldset').find('.ui-controlgroup-label');
 			var fieldName = legend.length ? legend.text() : label.text();
 			html += '<li>'+ fieldName +'</li>';
 		};
+		//used factory
 		$("recordBillErrors ul").html(html);
 		},
 		submitHandler: function(){
@@ -41,6 +43,7 @@ var billForm = $('#AddBillForm');
 
 	function makeCats(){
 		var formTag = document.getElementsByTagName("form"),
+			// used factory
 			selectLi = $('select'),
 			makeSelect = document.createElement('select');
 			makeSelect.attr("id", "categories");         
@@ -63,7 +66,7 @@ var billForm = $('#AddBillForm');
 		}
 		getSelectedRadio();
 		getCheckboxValue();
-		
+		// used factory
 		var item					= {};
 			item.category			= ["Category: ", $('#categories').val()];
 			item.compName			= ["Company Name: ", $('#compName').val()];
@@ -85,13 +88,14 @@ var billForm = $('#AddBillForm');
 	
 	var getSelectedRadio = function(){
 	var radios = function (){
+		// used factory
 		$('input:radio[name="pastDue"]:checked').val();
 		return($('input:radio[name="pastDue"]:checked').val());
 
 };
 };
 
-
+// used factory within getData function
 	function getData(){
 		$("#addBill").empty();
 		toggleControls("on");
@@ -133,7 +137,8 @@ var billForm = $('#AddBillForm');
 			localStorage.setItem(id, JSON.stringify(json[n]));
 		}
 	}
-
+// used factory in toggleControls function 
+// not sure if need this function
 	function toggleControls(n){
 			switch(n){
 				case "on":
@@ -153,7 +158,7 @@ var billForm = $('#AddBillForm');
 					return false;
 		}
 	}
-
+// used factory in makeItemLinks function
 	function makeItemLinks(key, linksLi){
 		var editLink = $('<a>');
 		editLink.attr("href", "#");
@@ -175,7 +180,7 @@ var billForm = $('#AddBillForm');
 		linksLi.append(deleteLink);
 	}
 
-
+// editItem used factory although needs work!
 function editItem(){
 		var thisKey = $(this).attr("key");
 		var value = localStorage.getItem($(this).attr("key"));
