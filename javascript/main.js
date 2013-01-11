@@ -15,8 +15,8 @@ var parseBillForm = function(data) {
 
 //console.log(data);
 };
-// used $ library
-$(document).bind('pageinit', function(){
+// used $ factory and changed .bind to .on
+$(document).on('pageinit', function(){
 
 var billForm = $('#AddBillForm');
 
