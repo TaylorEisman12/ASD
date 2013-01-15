@@ -1,6 +1,6 @@
 // Taylor Eisman
 // ASD 01/13
-// Project 1
+// Project 2
 
 var json = {
 	"bill1": {
