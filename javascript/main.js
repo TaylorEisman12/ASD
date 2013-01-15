@@ -1,6 +1,6 @@
 // Taylor Eisman
 // ASD 01/13
-// Project 1
+// Project 2
 
 // $(function(){  <-- Shortcut
 //};)
@@ -18,7 +18,7 @@ var parseBillForm = function(data) {
 // used $ factory and changed .bind to .on
 $(document).on('pageinit', function(){
 // used factory
-var billForm = $('#AddBillForm');
+var billForm = $('#addBillForm');
 
 	billForm.validate({
 		invalidHandler: function(form, validator){
