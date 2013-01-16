@@ -4,6 +4,234 @@
 <!-- Project 2 -->
 <html>
 	<head>
+	<meta charset="UTF-8" />
+		<meta name="robots" content="noindex, nofollow" />
+		<meta name="viewport" content="user-scalable=no, width=device-width" />
+		<title>Add A Bill</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+		<link href="css/styles.css" rel="stylesheet" type="text/css" />
+		<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+		<script src="js/libs/modernizr.custom.min.js"></script>
+	<head>
+	<body>
+		<!-- Home Page -->
+		<section id="index" data-role="page">
+		<header data-role="header"><h1>Bill Saver</h1></header>
+		<div data-role="content" class="content">
+			<div id="cta">
+				<img src="images/simpleCTA.png" id="cta">
+				<p><a href="#addBill" data-rel="dialog" data-role="button">Add a Bill</a></p>
+			</div>
+			<!-- div controlgroup for Bill selection -->
+			<div data-role="controlgroup" class="required">
+				<ul data-role="listview" data-shadow="true" data-inset="true">
+					<li><div class="linkTitle">View current bills:</div></li>
+				
+				<a href="#cell" data-role="button">Cell Bills</a>
+				<a href="#car" data-role="button">Car Bills</a>
+				<a href="#rent" data-role="button">Rent Bills</a>
+				<a href="#cable" data-role="button">Cable Bills</a>
+				</ul>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#info" data-icon="info">Info</a></li>
+					<li><a href="#home" data-icon="home" class="ui-btn-active">Home</a></li>
+					<li><a href="#search" data-icon="search">Search</a></li>
+				</ul>
+			</div>
+		</div>
+		</section>
+		<!-- AddBill Page -->
+		<section id="addBill" data-role="page">
+		<header data-role="header"><h1>Add a Bill</h1></header>
+		<div data-role="content" class="content">
+				<h3>Add a New Bill</h3>
+				<span>* fields are required</span>
+				<form id="addNewBill" action="#" method="post">
+				<!-- fieldcontain for category -->
+					<div data-role="fieldcontain">
+						<label for="select-cat">*Select Category:</label>
+						<select id="select-cat" name="select-cat" data-native-menu="false" class="required">
+							<option data-placeholder="true">Select a Category</option>
+							<option value="cell">Cell</option>
+							<option value="car">Car</option>
+							<option value="rent">Rent</option>
+							<option value="cable">Cable</option>
+						</select>
+					</div>
+					<!-- div fieldcontain for company name input -->
+					<div data-role="fieldcontain" class="required">
+						<label for="compName">*Company Name:</label>
+						<input type="text" name="compName" id="compName" placeholder="Please enter Company Name" class="requierd">
+					</div>
+					<!-- div fieldcontain for company email input -->
+					<div data-role="fieldcontain" class="required email">
+						<label for="compEmail">*Company Email:</label>
+						<input type="text" name="compEmail" id="compEmail" placeholder="Please enter Company Email" class="requierd">
+						<span id="requiredHint">Example: abc@abc.com</span>
+					</div>
+					<!-- div fieldcontain for company website -->
+					<div data-role="fieldcontain">
+						<label for="compWebsite">Company Website:</label>
+						<input type="text" name="compWebsite" id="compWebsite" placeholder="Please enter Company Website">
+					</div>
+					<!-- Payby Radio fieldcontain -->
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+							<legend>Pay By:</legend>
+							<input type="radio" value="internet" name="internet" id="internet" class="required" />
+							<label for="internet">Internet</label>
+							<input type="radio" value="mail" name="mail" id="mail" />
+							<label for="mail">Mail</label>
+						</fieldset>	
+					</div>
+					<!-- fieldcontain for pastdue -->
+					<div data-role="fieldcontain">
+						<label for="pastDue">Past Due?</label><br />
+						<select data-role="slider">
+							<option value="off">No</option>
+							<option value="yes">Yes</option>
+						</select>
+					</div>
+					<!-- fieldcontain for budgetpercent -->
+					<div data-role="fieldcontain">
+						<label for="budgetPercent">Budget Percent:</label>
+						<input type="range" name="budgetPercent" id="budgetPercent" value="50" min="0" max="100" />
+					</div>
+					<!-- fieldcontain for date added -->
+					<div data-role="fieldcontain">
+						<label for="mydate">Date Added:</label>
+						<input name="dateAdded" id="dateAdded" type="date" data-role="date" data-options='{"mode": "calbox"}'>
+					</div>
+					<!-- fieldcontain for notes -->
+					<div data-role="fieldcontain">
+						<label for="notes">Bill Notes:</label>
+						<textarea></textarea>
+					</div>
+					<!-- fieldcontain for submit and cancel -->
+					<div class="ui-grid-b">
+						<div class="ui-block-a"><p><input type="submit" value="submit" /></p></div>
+						<div class="ui-block-b"><p></p></div>
+						<div class="ui-block-c"><p><a href="#index" id="cancelLink">Cancel</a></p></div>
+					</div>
+				</form>
+		</div>
+		<footer data-role="footer" data-position="fixed" ><h1>Bill Saver</h1></footer>
+		</section>
+		<!-- Cell Page -->
+		<section id="cell" data-role="page" data-add-back-btn="true">
+		<header data-role="header"><h1>Cell Bills</h1></header>
+		<div data-role="content" class="content">
+			<p>Cell Bills</p>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#info" data-icon="info">Info</a></li>
+					<li><a href="#index" data-icon="home">Home</a></li>
+					<li><a href="#search" data-icon="search">Search</a></li>
+				</ul>
+			</div>
+		</div>
+		</section>
+		<!-- Car Page -->
+		<section id="car" data-role="page" data-add-back-btn="true">
+		<header data-role="header"><h1>Car Bills</h1></header>
+		<div data-role="content" class="content">
+			<p>Car Bills</p>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#info" data-icon="info">Info</a></li>
+					<li><a href="#index" data-icon="home">Home</a></li>
+					<li><a href="#search" data-icon="search">Search</a></li>
+				</ul>
+			</div>
+		</div>
+		</section>
+		<!-- Rent Page -->
+		<section id="rent" data-role="page" data-add-back-btn="true">
+		<header data-role="header"><h1>Rent Bills</h1></header>
+		<div data-role="content" class="content">
+			<p>Rent Bills</p>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#info" data-icon="info">Info</a></li>
+					<li><a href="#index" data-icon="home">Home</a></li>
+					<li><a href="#search" data-icon="search">Search</a></li>
+				</ul>
+			</div>
+		</div>
+		</section>
+		<!-- Cable Page -->
+		<section id="cable" data-role="page" data-add-back-btn="true">
+		<header data-role="header"><h1>Cable Bills</h1></header>
+		<div data-role="content" class="content">
+			<p>Cable Bills</p>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#info" data-icon="info">Info</a></li>
+					<li><a href="#index" data-icon="home">Home</a></li>
+					<li><a href="#search" data-icon="search">Search</a></li>
+				</ul>
+			</div>
+		</div>
+		</section>
+		<!-- Info Page -->
+		<section id="info" data-role="page" data-add-back-btn="true">
+		<header data-role="header"><h1>Information</h1></header>
+		<div data-role="content" class="content">
+			<p>Info Page</p>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#info" data-icon="info" class="ui-btn-active">Info</a></li>
+					<li><a href="#index" data-icon="home">Home</a></li>
+					<li><a href="#search" data-icon="search">Search</a></li>
+				</ul>
+			</div>
+		</div>
+		</section>
+		<!-- Search Page -->
+		<section id="search" data-role="page" data-add-back-btn="true">
+		<header data-role="header"><h1>Search</h1></header>
+		<div data-role="content" class="content">
+			<p>Search for a bill:</p>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#info" data-icon="info">Info</a></li>
+					<li><a href="#index" data-icon="home">Home</a></li>
+					<li><a href="#search" data-icon="search" class="ui-btn-active">Search</a></li>
+				</ul>
+			</div>
+		</div>
+		</section>
+	</body>
+	<script src="http://code.jquery.com/jquery-1.8.0.min.js" type="text/javascript"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js" type="text/javascript"></script>
+	<script src="js/libs/jquery.validate.min.js" type="text/javascript"></script>
+	<script src="javascript/main.js" type="text/javascript"></script>
+	<script src="javascript/json.js" type="text/javascript"></script>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<!-- Taylor Eisman -->
+<!-- ASD 01/13 -->
+<!-- Project 2 -->
+<!-- <html>
+	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="ASD Project" />
 		<meta name="keywords" content="ASD, bills" />
@@ -13,14 +241,14 @@
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 		<link href="css/styles.css" rel="stylesheet" type="text/css" />
 		<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
-		<script src="js/libs/modernizr.custom.min.js"></script>
+<!--		<script src="js/libs/modernizr.custom.min.js"></script>
 	</head>
 	<body>
 		<div data-role="page" id="home" data-theme="f">
 			<div data-role="header" data-theme="b" data-position="fixed">
 				<h1>Bill Saver</h1>
 			</div> <!-- Header -->
-			<div id="cta">
+	<!-- 		<div id="cta">
 				<img src="images/simpleCTA.png" id="cta">
 				<nav>
 					<a href="#addBill" data-role="button" data-theme="b">Add A Bill</a> 
@@ -38,7 +266,7 @@
 					<li><a href="#cable"><img src="images/cable.png" />Cable Bills</a></li>
 				</ul>
 			</div> <!-- List Content -->
-			<div data-role="footer" data-theme="b" data-position="fixed">
+	<!-- 		<div data-role="footer" data-theme="b" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#search" data-icon="search">Search</a></li>
@@ -46,14 +274,15 @@
 						<li><a href="#info" data-icon="info">Info</a></li>
 					</ul>
 				</div><!-- Navbar -->
-			</div> <!-- Footer -->
-		</div><!-- Home Page -->
+	<!-- 		</div> <!-- Footer -->
+<!-- 		</div><!-- Home Page -->
 		
-		
+<!-- 		
 		<div data-role="page" id="addBill" data-theme="f" data-add-back-btn="true">
 			<div data-role="header" data-theme="b" data-position="fixed">
 				<h1>Add A Bill</h1>
 			</div><!-- header -->
+<!-- 
 			<span id="requiredHint">*fields are required.</span>
 			<div data-role="content">
 				<form action="" method="post" id="addBillForm">
@@ -67,19 +296,23 @@
 							<option value="cable">Cable</option>
 						</select>
 					</div><!-- Category dropdown fieldcontain -->
+<!-- 
 					<div data-role="fieldcontain">
 						<label for="compName">*Company Name</label>
 						<input type="text" name="compName" id="compName" placeholder="Please enter Company Name." class="required" />
 					</div><!-- Company Name text fieldcontain -->
+	<!-- 
 					<div data-role="fieldcontain">
 						<label for="compEmail">*Company Email</label>
 						<input type="text" name="compEmail" id="compEmail" placeholder="Please enter a valid Email." class="required email" />
 						<span id="requiredHint">Example: abc@abc.com</span>
 					</div><!-- Company Email text fieldcontain-->
+<!-- 
 					<div data-role="fieldcontain">
 						<label for="compWebsite">Company Website</label>
 						<input type="text" name="compWebsite" id="compWebsite" placeholder="Enter company website."  />
 					</div> <!-- Company website text fieldcontain -->
+			<!-- 
 					<div data-role="fieldcontain">
 						<fieldset data-role="controlgroup">
 							<legend>Pay By</legend>
@@ -89,6 +322,7 @@
 							<label for="mail">Mail</label>
 						</fieldset>	
 					</div><!-- Payby Radio fieldcontain -->
+		<!-- 
 					<div data-role="fieldcontain">
 						<label for="pastDue">Past Due?</label><br />
 						<select data-role="slider" data-theme="b">
@@ -102,26 +336,32 @@
 							<label for="pastDue">Past Due?</label>
 						</fieldset>
 					</div> --><!-- PastDue checkbox fieldcontain -->
+	<!-- 
 					<div data-role="fieldcontain">
 						<label for="budgetPercent">Budget Percent</label>
 						<input type="range" name="budgetPercent" id="budgetPercent" data-theme="b" value="50" min="0" max="100" />
 					</div><!-- budget percent slider fieldcontain -->
+	<!-- 
 					<div data-role="fieldcontain">
 						<label for="mydate">Date Added</label>
 						<input name="dateAdded" id="dateAdded" type="date" data-role="date" data-options='{"mode": "calbox"}'>
 					</div><!-- Date added fieldcontain -->
+		<!-- 
 					<div data-role="fieldcontain">
 						<label for="notes">Notes</label>
 						<textarea></textarea>
 					</div><!-- Notes textarea fieldcontain -->
+	<!-- 
 					<div data-role="fieldcontain">
 						<input type="submit" value="Submit" data-inline="true" data-theme="b"  />
 						<a href="index.html" id="cancelLink">Cancel</a>
 					</div><!-- submit/clear buttons fieldcontain -->
+	<!-- 
 					<a href="#recordBillErrors" id="billFormErrors" data-rel="dialog"></a>
 				</form>
 			</div> <!-- Content -->
-		</div> <!-- Page -->
+	<!-- 	</div> <!-- Page -->
+<!-- 
 		<div id="bills">
 		</div>
 		<div data-role="dialog" id="recordBillErrors">
@@ -135,17 +375,19 @@
 			</div>
 		</div>
 		
-		
+<!-- 		
 		
 		<div data-role="page" id="info" data-theme="f">
 			<div data-role="header" data-theme="b" data-position="fixed">
 				<h1>Bill Saver</h1>
 			</div> <!-- Header -->
+<!-- 
 			<div data-role"content">
 				<a href="https://github.com/TaylorEisman12/MIU07-12" data-role="button" data-icon="grid" data-iconpos="top" data-inline="true" data-mini="true">Git Links</a>
 				<a href="index.html" data-role="button" data-icon="star" data-iconpos="top" data-inline="true" data-mini="true">Gold App</a>
 				<a href="BronzeAppcopy/index.html" data-role="button" data-icon="gear" data-iconpos="top" data-inline="true" data-mini="true">Brnze App</a>	
 			</div> <!-- List Content -->
+<!-- 
 			<div data-role="footer" data-theme="b" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
@@ -154,19 +396,21 @@
 						<li><a href="#info" data-icon="info" class="ui-btn-active">Info</a></li>
 					</ul>
 				</div><!-- Navbar -->
-			</div> <!-- Footer -->
-		</div><!-- Info Page -->		
-		
+<!--			</div> <!-- Footer -->
+<!--		</div><!-- Info Page -->		
+<!--		
 		<div data-role="page" data-theme="f" id="search">
 			<div data-role="header" data-position="fixed">
 				<h1>Search</h1>
 			</div> <!-- Header -->
+<!--
 			<div data-role"content">
 				<ul data-role="listview" data-filter="true">
 					<li><div class="linkTitle">Searched Bills:</div></li>
 				
 				</ul>
 			</div> <!-- List Content -->
+<!--
 			<div data-role="footer" data-theme="b" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
@@ -175,19 +419,21 @@
 						<li><a href="#info" data-icon="info">Info</a></li>
 					</ul>
 				</div><!-- Navbar -->
-			</div> <!-- Footer -->
-		</div><!-- Search Page -->
-
+<!--			</div> <!-- Footer -->
+<!--		</div><!-- Search Page -->
+<!--
 	<div data-role="page" data-theme="f" id="displayAll">
 		<div data-role="header" data-theme="b" data-position="fixed">
 			<h1>Bill Saver</h1>
 		</div> <!-- Header -->
+<!--
 		<div data-role"content">
 			<ul data-role="listview" data-filter="true">
 				<li><div class="linkTitle">All Bills:</div></li>
 				
 			</ul>
 		</div> <!-- List Content -->
+<!--
 		<div data-role="footer" data-theme="b" data-position="fixed" data-id="cell">
 			<div data-role="navbar">
 				<ul>
@@ -198,17 +444,19 @@
 			</div>
 		</div>
 	</div> <!-- Cell Page -->
-
+<!--
 		<div data-role="page" id="car" data-theme="f" data-filter="true">
 		<div data-role="header" data-position="fixed" data-theme="b">
 			<h1>Bill Saver</h1>
 		</div> <!-- Header -->
+<!--
 		<div data-role"content">
 			<ul data-role="listview" data-filter="true">
 				<li><div class="linkTitle">Car Bills:</div></li>
 				
 			</ul>
 		</div> <!-- List Content -->
+<!--
 		<div data-role="footer" data-position="fixed" data-id="cable" data-theme="b">
 			<div data-role="navbar">
 				<ul>
@@ -219,7 +467,8 @@
 			</div>
 		</div>
 	</div> <!-- Cable Page -->
-	
+
+<!-- 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>		
 	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
@@ -229,4 +478,5 @@
 	</body>
 </html>
 
+-->
 
