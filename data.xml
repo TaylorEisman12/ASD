@@ -1,1 +1,223 @@
-test
+<?xml version="1.0" encoding="UTF-8"?>
+    <bills>
+        <bill>
+            <compName>Company Name: Honda</compName>
+            <category>Category: Car</category>
+            <compEmail>Company Email: HondaSales@honda.com</compEmail>
+            <compWeb>Company Website: www.Honda.com</compWeb>
+            <payBy>PayBy: Internet</payBy>
+            <pastDue>Past Due: No</pastDue>
+            <budgetPercent>Budget Percent: 15</budgetPercent>
+            <date>Date Added: 06/28/2012</date>
+            <notes>Notes: Jason's Red Honda Civic 2 door.</notes>
+        </bill>
+        <bill>
+            <compName>Company Name: Chevy</compName>
+            <category>Category: Car</category>
+            <compEmail>Company Email: ChevySales@chevy.com</compEmail>
+            <compWeb>Company Website: www.Chevy.com</compWeb>
+            <payBy>PayBy: Mail</payBy>
+            <pastDue>Past Due: Yes</pastDue>
+            <budgetPercent>Budget Percent: 10</budgetPercent>
+            <date>Date Added: 05/28/2012</date>
+            <notes>Notes: Kelly's Pink Chevy Cobalt 2 door.</notes>
+        </bill>
+        <bill>
+            <compName>Company Name: Ford</compName>
+            <category>Category: Car</category>
+            <compEmail>Company Email: FordSales@ford.com</compEmail>
+            <compWeb>Company Website: www.Ford.com</compWeb>
+            <payBy>PayBy: Mail</payBy>
+            <pastDue>Past Due: Yes</pastDue>
+            <budgetPercent>Budget Percent: 25</budgetPercent>
+            <date>Date Added: 07/28/2012</date>
+            <notes>Notes: Kevin's Blue Ford Mustang 2 door.</notes>
+        </bill>
+        <bill>
+            <compName>Company Name: ATT</compName>
+            <category>Category: Cell</category>
+            <compEmail>Company Email: sales@att.com</compEmail>
+            <compWeb>Company Website: www.att.com</compWeb>
+            <payBy>PayBy: Internet</payBy>
+            <pastDue>Past Due: No</pastDue>
+            <budgetPercent>Budget Percent: 30</budgetPercent>
+            <date>Date Added: 08/28/2012</date>
+            <notes>Notes: Norman's Iphone With Data Plan.</notes>
+        </bill>
+        <bill>
+            <compName>Company Name: T-Mobile</compName>
+            <category>Category: Cell</category>
+            <compEmail>Company Email: sales@tmobile.com</compEmail>
+            <compWeb>Company Website: www.Tmobile.com</compWeb>
+            <payBy>PayBy: Mail</payBy>
+            <pastDue>Past Due: No</pastDue>
+            <budgetPercent>Budget Percent: 5</budgetPercent>
+            <date>Date Added: 01/28/2012</date>
+            <notes>Notes: Nikki's SideKick With Text Plan.</notes>
+        </bill>
+        <bill>
+            <compName>Company Name: Verizon</compName>
+            <category>Category: Cell</category>
+            <compEmail>Company Email: sales@verizon.com</compEmail>
+            <compWeb>Company Website: www.verizon.com</compWeb>
+            <payBy>PayBy: Mail</payBy>
+            <pastDue>Past Due: Yes</pastDue>
+            <budgetPercent>Budget Percent: 75</budgetPercent>
+            <date>Date Added: 08/20/2012</date>
+            <notes>Notes: Kara's Droid Razor With Data Plan.</notes>
+        </bill>
+        <bill>
+            <compName>Company Name: Sprint</compName>
+            <category>Category: Cell</category>
+            <compEmail>Company Email: sales@sprint.com</compEmail>
+            <compWeb>Company Website: www.sprint.com</compWeb>
+            <payBy>PayBy: Internet</payBy>
+            <pastDue>Past Due: No</pastDue>
+            <budgetPercent>Budget Percent: 15</budgetPercent>
+            <date>Date Added: 08/10/2012</date>
+            <notes>Notes: Patrick's Galaxy S3 With Text Plan.</notes>
+        </bill>
+        <bill>
+            <compName>Company Name: HRHomes</compName>
+            <category>Category: Rent</category>
+            <compEmail>Company Email: sales@hrhomes.com</compEmail>
+            <compWeb>Company Webiste: www.hrhomes.com</compWeb>
+            <payBy>PayBy: Internet</payBy>
+            <pastDue>Past Due: No</pastDue>
+            <budgetPercent>Budget Percent: 80</budgetPercent>
+            <date>Date Added: 02/12/2012</date>
+            <notes>Notes: Steven's Condo On The Lake.</notes>
+        </bill>
+        <bill>
+            <compName>Company Name: American Apartments</compName>
+            <category>Category: Rent</category>
+            <compEmail>Company Email: americanapartments@apt.com</compEmail>
+            <compWeb>Company Website: www.americanapartments.com</compWeb>
+            <payBy>PayBy: Mail</payBy>
+            <pastDue>Past Due: No</pastDue>
+            <budgetPercent>Budget Percent: 60</budgetPercent>
+            <date>Date Added: 08/08/2012</date>
+            <notes>Notes: Amy's TownHome On The Square.</notes>
+        </bill>
+        <bill>
+            <compName>Company Name: Hutto Homes</compName>
+            <category>Category: Rent</category>
+            <compEmail>Company Email: hutto@homes.com</compEmail>
+            <compWeb>Company Website: www.huttohomes.com</compWeb>
+            <payBy>PayBy: Mail</payBy>
+            <pastDue>Past Due: No</pastDue>
+            <budgetPercent>Budget Percent: 90</budgetPercent>
+            <date>Date Added: 06/13/2012</date>
+            <notes>Notes: Josh's House In Hutto.</notes>
+        </bill>
+        <bill>
+            <compName>Company Name: Nissan</compName>
+            <category>Category: Car</category>
+            <compEmail>Company Email: sales@nissan.com</compEmail>
+            <compWeb>Company Website: www.nissanusa.com</compWeb>
+            <payBy>PayBy: Internet</payBy>
+            <pastDue>Past Due: Yes</pastDue>
+            <budgetPercent>Budget Percent: 40</budgetPercent>
+            <date>Date Added: 12/25/2012</date>
+            <notes>Notes: Billy's White Titan With 4 doors.</notes>
+        </bill>
+        <bill>
+            <compName>Company Name: Time Warner</compName>
+            <category>Category: Cable</category>
+            <compEmail>Company Email: sales@timewarner.com</compEmail>
+            <compWeb>Company Website: www.timewarner.com</compWeb>
+            <payBy>PayBy: Internet</payBy>
+            <pastDue>Past Due: No</pastDue>
+            <budgetPercent>Budget Percent: 17</budgetPercent>
+            <date>Date Added: 11/11/2012</date>
+            <notes>Notes: Grandmaw's Beach House TV.</notes>
+        </bill>
+        <bill>
+            <compName>Company Name: Sudden Link</compName>
+            <category>Category: Cable</category>
+            <compEmail>Company Email: suddenlink@links.com</compEmail>
+            <compWeb>Company Website: www.suddenlink.com</compWeb>
+            <payBy>PayBy: Internet</payBy>
+            <pastDue>Past Due: Yes</pastDue>
+            <budgetPercent>Budget Percent: 6</budgetPercent>
+            <date>Date Added: 07/18/2012</date>
+            <notes>Notes: Dad's Hunting Lodge Tv.</notes>
+        </bill>
+        <bill>
+            <compName>Company Name: Homes R Us</compName>
+            <category>Category: Rent</category>
+            <compEmail>Company Email: homes@rus.com</compEmail>
+            <compWeb>Company Website: www.homesrus.com</compWeb>
+            <payBy>PayBy: Internet</payBy>
+            <pastDue>Past Due: Yes</pastDue>
+            <budgetPercent>Budget Percent: 75</budgetPercent>
+            <date>Date Added: 03/19/2012</date>
+            <notes>Notes: Lars's House On The Lake.</notes>
+        </bill>
+        <bill>
+            <compName>Company Name: Road Runner</compName>
+            <category>Category: Cable</category>
+            <compEmail>Company Email: roadrun@ner.com</compEmail>
+            <compWeb>Company Website: www.roadrunner.com</compWeb>
+            <payBy>PayBy: Mail</payBy>
+            <pastDue>Past Due: No</pastDue>
+            <budgetPercent>Budget Percent: 15</budgetPercent>
+            <date>Date Added: 04/22/2012</date>
+            <notes>Notes: Helan's Living Room TV.</notes>
+        </bill>
+        <bill>
+            <compName>Company Name: Sudden Link</compName>
+            <category>Category: Cable</category>
+            <compEmail>Company Email: sales@suddenlink.com</compEmail>
+            <compWeb>Company Website: www.suddenlink.com</compWeb>
+            <payBy>PayBy: Mail</payBy>
+            <pastDue>Past Due: Yes</pastDue>
+            <budgetPercent>Budget Percent: 25</budgetPercent>
+            <date>Date Added: 08/17/2012</date>
+            <notes>Notes: Sarah's Bedroom TV.</notes>
+        </bill>
+        <bill>
+            <compName>Company Name: Smart Car</compName>
+            <category>Category: Car</category>
+            <compEmail>Company Email: smartcar@cars.com</compEmail>
+            <compWeb>Company Website: www.smartcars.com</compWeb>
+            <payBy>PayBy: Mail</payBy>
+            <pastDue>Past Due: No</pastDue>
+            <budgetPercent>Budget Percent: 20</budgetPercent>
+            <date>Date Added: 02/10/2012</date>
+            <notes>Notes: Daughter's Blue Smart Car.</notes>
+        </bill>
+        <bill>
+            <compName>Company Name: Cable Rollers</compName>
+            <category>Category: Cable</category>
+            <compEmail>Company Email: cable@rollers.com</compEmail>
+            <compWeb>Company Website: www.cablerollers.com</compWeb>
+            <payBy>PayBy: Internet</payBy>
+            <pastDue>Past Due: No</pastDue>
+            <budgetPercent>Budget Percent: 35</budgetPercent>
+            <date>Date Added: 11/19/2012</date>
+            <notes>Notes: Alex's Bedroom TV With DVR.</notes>
+        </bill>
+        <bill>
+            <compName>Company Name: Home 2 Home</compName>
+            <category>Category: Rent</category>
+            <compEmail>Company Email: home2home@homes.com</compEmail>
+            <compWeb>Company Website: www.home2home.com</compWeb>
+            <payBy>PayBy: Mail</payBy>
+            <pastDue>Past Due: Yes</pastDue>
+            <budgetPercent>Budget Percent: 40</budgetPercent>
+            <date>Date Added: 12/05/2012</date>
+            <notes>Notes: Cara's House On The Farm.</notes>
+        </bill>
+        <bill>
+            <compName>Company Name: Virgin Mobile</compName>
+            <category>Category: Cell</category>
+            <compEmail>Company Email: virginmobile@mobile.com</compEmail>
+            <compWeb>Company Website: www.verginmobile.com</compWeb>
+            <payBy>PayBy: Internet</payBy>
+            <pastDue>Past Due: No</pastDue>
+            <budgetPercent>Budget Percent: 55</budgetPercent>
+            <date>Date Added: 01/09/2012</date>
+            <notes>Notes: Victor's Flip Phone With Text Plan.</notes>
+       </bill>
+    </bills>
