@@ -9,7 +9,7 @@
 		<meta name="viewport" content="user-scalable=no, width=device-width" />
 		<title>Add A Bill</title>
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
-		<link href="css/styles.css" rel="stylesheet" type="text/css" />
+		<link href="styles.css" rel="stylesheet" type="text/css" />
 		<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
 		<script src="js/libs/modernizr.custom.min.js"></script>
 	<head>
@@ -76,7 +76,7 @@
 					<!-- div fieldcontain for company website -->
 					<div data-role="fieldcontain">
 						<label for="compWebsite">Company Website:</label>
-						<input type="text" name="compWebsite" id="compWebsite" placeholder="Please enter Company Website">
+						<input type="url" name="compWebsite" id="compWebsite" placeholder="Please enter Company Website">
 					</div>
 					<!-- Payby Radio fieldcontain -->
 					<div data-role="fieldcontain">
@@ -217,11 +217,71 @@
 			</div>
 		</div>
 		</section>
+		<!-- Error Page -->
+		<section id="error" data-role="page" data-add-back-btn="true">
+			<header data-role="header"><h1>Oh No!</h1></header>
+			<div class="content" data-role="content">
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#info" data-icon="info">Info</a></li>
+						<li><a href="#index" data-icon="home">Home</a></li>
+						<li><a href="#search" data-icon="search">Search</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- CSV Page -->
+		<section id="csvData" data-role="page" data-back-btn="true">
+			<header data-role="header"><h1>CSV Data</h1></header>
+			<div class="content" data-role="content">
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#info" data-icon="info">Info</a></li>
+						<li><a href="#index" data-icon="home">Home</a></li>
+						<li><a href="#search" data-icon="search">Search</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- JSON Page -->
+		<section id="jsonData" data-role="page" data-back-btn="true">
+			<header data-role="header"><h1>JSON Data</h1></header>
+			<div class="content" data-role="content">
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#info" data-icon="info">Info</a></li>
+						<li><a href="#index" data-icon="home">Home</a></li>
+						<li><a href="#search" data-icon="search">Search</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- XML Page -->
+		<section id="xmlData" data-role="page" data-back-btn="true">
+			<header data-role="header"><h1>XML Data</h1></header>
+			<div class="content" data-role="content">
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#info" data-icon="info">Info</a></li>
+						<li><a href="#index" data-icon="home">Home</a></li>
+						<li><a href="#search" data-icon="search">Search</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
 	</body>
 	<script src="http://code.jquery.com/jquery-1.8.0.min.js" type="text/javascript"></script>
 	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js" type="text/javascript"></script>
 	<script src="js/libs/jquery.validate.min.js" type="text/javascript"></script>
-	<script src="javascript/main.js" type="text/javascript"></script>
+	<script src="main.js" type="text/javascript"></script>
 	<script src="javascript/json.js" type="text/javascript"></script>
 </html>
 
