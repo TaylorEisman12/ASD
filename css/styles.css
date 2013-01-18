@@ -13,6 +13,16 @@ label.error{display:block; margin:10px 0; color:#cc0000;}
 .ui-body-f {background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #2BBBEF));}
 
 
+/*
+.portrait section {
+	background: #111222;
+}
+
+.landscape section {
+	background: #000000;
+}
+*/
+
 /*header {
 	background-color: navy;
 	margin: 0px;
