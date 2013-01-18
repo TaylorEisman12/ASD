@@ -9,14 +9,22 @@
 		<meta name="viewport" content="user-scalable=no, width=device-width" />
 		<title>Add A Bill</title>
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
-		<link href="styles.css" rel="stylesheet" type="text/css" />
+	<!-- Repoint to folder--><link href="styles.css" rel="stylesheet" type="text/css" />
 		<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
 		<script src="js/libs/modernizr.custom.min.js"></script>
 	<head>
 	<body>
 		<!-- Home Page -->
 		<section id="index" data-role="page">
-		<header data-role="header"><h1>Bill Saver</h1></header>
+		<header data-role="header"><h1>Bill Saver</h1>
+			<nav data-role="navbar">
+				<ul>
+					<li><a href="#csvData">CSV Data</a></li>
+					<li><a href="#jsonData">JSON Data</a></li>
+					<li><a href="#xmlData">XML Data</a></li>
+				</ul>
+			</nav>
+		</header>
 		<div data-role="content" class="content">
 			<div id="cta">
 				<img src="images/simpleCTA.png" id="cta">
@@ -26,13 +34,13 @@
 			<div data-role="controlgroup" class="required">
 				<ul data-role="listview" data-shadow="true" data-inset="true">
 					<li><div class="linkTitle">View current bills:</div></li>
-				
-				<a href="#cell" data-role="button">Cell Bills</a>
-				<a href="#car" data-role="button">Car Bills</a>
-				<a href="#rent" data-role="button">Rent Bills</a>
-				<a href="#cable" data-role="button">Cable Bills</a>
+					<li><a href="#cell" data-role="button">Cell Bills</a></li>
+					<li><a href="#car" data-role="button">Car Bills</a></li>
+					<li><a href="#rent" data-role="button">Rent Bills</a></li>
+					<li><a href="#cable" data-role="button">Cable Bills</a></li>
 				</ul>
 			</div>
+			
 		</div>
 		<div data-role="footer" data-position="fixed">
 			<div data-role="navbar">
@@ -234,7 +242,15 @@
 		</section>
 		<!-- CSV Page -->
 		<section id="csvData" data-role="page" data-back-btn="true">
-			<header data-role="header"><h1>CSV Data</h1></header>
+			<header data-role="header"><h1>CSV Data</h1>
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#csvData" class="ui-btn-active">CSV Data</a></li>
+						<li><a href="#jsonData">JSON Data</a></li>
+						<li><a href="#xmlData">XML Data</a></li>
+					</ul>
+				</nav>
+			</header>
 			<div class="content" data-role="content">
 			</div>
 			<div data-role="footer" data-position="fixed">
@@ -249,7 +265,15 @@
 		</section>
 		<!-- JSON Page -->
 		<section id="jsonData" data-role="page" data-back-btn="true">
-			<header data-role="header"><h1>JSON Data</h1></header>
+			<header data-role="header"><h1>JSON Data</h1>
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#csvData">CSV Data</a></li>
+						<li><a href="#jsonData" class="ui-btn-active">JSON Data</a></li>
+						<li><a href="#xmlData">XML Data</a></li>
+					</ul>
+				</nav>
+			</header>
 			<div class="content" data-role="content">
 			</div>
 			<div data-role="footer" data-position="fixed">
@@ -264,7 +288,15 @@
 		</section>
 		<!-- XML Page -->
 		<section id="xmlData" data-role="page" data-back-btn="true">
-			<header data-role="header"><h1>XML Data</h1></header>
+			<header data-role="header"><h1>XML Data</h1>
+				<nav data-role="navbar">
+					<ul>
+						<li><a href="#csvData">CSV Data</a></li>
+						<li><a href="#jsonData">JSON Data</a></li>
+						<li><a href="#xmlData" class="ui-btn-active">XML Data</a></li>
+					</ul>
+				</nav>
+			</header>
 			<div class="content" data-role="content">
 			</div>
 			<div data-role="footer" data-position="fixed">
@@ -281,9 +313,14 @@
 	<script src="http://code.jquery.com/jquery-1.8.0.min.js" type="text/javascript"></script>
 	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js" type="text/javascript"></script>
 	<script src="js/libs/jquery.validate.min.js" type="text/javascript"></script>
-	<script src="main.js" type="text/javascript"></script>
+	<!-- repoint to folder --><script src="main.js" type="text/javascript"></script>
 	<script src="javascript/json.js" type="text/javascript"></script>
 </html>
+
+
+
+
+
 
 
 <!-- <!DOCTYPE html>
