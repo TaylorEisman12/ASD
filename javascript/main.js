@@ -1,6 +1,5 @@
 
 
-
 // $(#index).on("orientationchange", function(orientation) {
 // show the loading dialog
 // $.mobile.pageLoading();
@@ -225,6 +224,17 @@ var storeData = function(data){
 
 };
 
+};
+
+var	deleteItem = function (){
+	var ask = confirm("Are you sure you want to delete this bill?");
+		if(ask){
+			localStorage.removeItem(this.key);
+			alert("Bill was deleted.");
+			window.location.reload();
+		}else{
+			alert("Bill was not deleted.");
+		}		
 };
 
 
