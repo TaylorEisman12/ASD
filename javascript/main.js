@@ -1,7 +1,6 @@
 
 
 
-
 // $(#index).on("orientationchange", function(orientation) {
 // show the loading dialog
 // $.mobile.pageLoading();
@@ -189,6 +188,45 @@ var getData = function(){
 		}
 
 };
+
+
+var storeData = function(data){
+	if(!key){
+			var id			= Math.floor(Math.random()*100000001);
+		}else{
+			id = key;
+		}
+		getSelectedRadio();
+		getCheckboxValue();
+		
+		var item					= {};
+			item.compName			= ["Company Name: ", $('#compName').val()];
+			item.category			= ["Category: ", $('#category').val()];
+			item.compEmail		= ["Company Email: ", $('#compEmail').val()];
+			item.compWeb		= ["Company Website: ", $('#compWeb').val()];
+			item.payBy			= ["PayBy: ", payByValue];
+			item.pastDue			= ["Past Due: ", pastDue];
+			item.budgetPercent		=["Budget Percent: " , $('#budgetPercent').value];
+			item.date			= ["Date Added: ", $('#date').value];
+			item.notes		= ["Notes: ", $('#notes').val()];
+		
+		localStorage.setItem(id, JSON.stringify(item));
+		alert("Bill Saved!");
+		save.off("click");
+		save.on("click", storeData);
+		window.location.reload();
+	
+	};
+	
+	var getSelectedRadio = function(){
+	var radios = function (){
+		$('input:radio[name="addToFav"]:checked').val();
+		return($('input:radio[name="addToFav"]:checked').val());
+
+};
+
+};
+
 
 
 // Taylor Eisman
