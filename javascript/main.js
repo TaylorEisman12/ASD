@@ -1,5 +1,4 @@
 
-
 // $(#index).on("orientationchange", function(orientation) {
 // show the loading dialog
 // $.mobile.pageLoading();
@@ -237,6 +236,31 @@ var	deleteItem = function (){
 		}		
 };
 
+
+
+var clearLocal = function(){
+	if(localStorage.length === 0){
+			alert("No data to clear.");
+		}else{
+			localStorage.clear();
+			alert("All Bills are deleted");
+			window.location.reload();
+			return false;
+		}
+	}
+	
+	var pastDueValue,
+		pastDueValue = "No",
+		errMsg = ge('errors');
+	
+	makeCats();
+
+	var clearLink = ge('clear');
+	clearLink.addEventListener("click", clearLocal);
+	var save = ge('submit');
+	save.addEventListener("click", validate);
+
+};
 
 
 // Taylor Eisman
